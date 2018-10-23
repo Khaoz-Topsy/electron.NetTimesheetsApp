@@ -1,0 +1,15 @@
+﻿@model ErrorTimesheetViewModel
+
+<header>
+    <h2>
+        <a href="#">
+            @Model.Title
+        </a>
+    </h2>
+</header>
+<img src="~/images/error.png" class="loader" alt="error" />
+
+<ul class="actions special">
+    <li><a href="#" class="button" onclick="loadPartial(event, '@Model.Id', '@Model.Title', '@Model.Url')">Refresh</a></li>
+</ul>
+

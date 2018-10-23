@@ -1,0 +1,54 @@
+#header {
+	height: unset;
+	padding-top: 2em;
+	padding-bottom: 6em;
+}
+
+#copyright {
+    color: rgba(255, 255, 255, .5);
+}
+
+#main > .posts > article.no-padding {
+	padding-top: 2rem;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+article .loader {
+	max-width: 100px;
+	max-height: 100px;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+table tbody tr {
+	line-height: 1.75em;
+	text-align: left;
+}
+
+
+#wrapper > .bg {
+	/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/background3.jpg"); */
+	
+	
+	background: rgb(20,64,68);
+	background: -moz-linear-gradient(168deg, rgba(20,64,68,1) 0%, rgba(68,35,89,1) 17%, rgba(54,75,89,1) 100%);
+	background: -webkit-linear-gradient(168deg, rgba(20,64,68,1) 0%, rgba(68,35,89,1) 17%, rgba(54,75,89,1) 100%);
+	background: linear-gradient(168deg, rgba(20,64,68,1) 0%, rgba(68,35,89,1) 17%, rgba(54,75,89,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#144044",endColorstr="#364b59",GradientType=1);
+}
+
+
+input[type="date"] {
+	background: transparent;
+	border: 1px solid rgba(255,255,255, 0.25);
+	border-radius: 25px;
+	padding-left: 1em;
+}
+input[type="date"]::-webkit-inner-spin-button {
+	display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	color: white;
+	background-color: transparent;
+}

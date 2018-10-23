@@ -1,0 +1,71 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+    $(document).ready(function (e) {
+        var date = new Date();
+        var endDate = date.toISOString().slice(0, 10);
+        date.setDate(date.getDate() - 7);
+        var startDate = date.toISOString().slice(0, 10);
+
+        document.getElementById('startDate').value = startDate;
+        document.getElementById('endDate').value = endDate;
+
+        $("article.partialContents").each(function (index, item) {
+            var url = $(item).data("url") + "?startDate=" + startDate + "&endDate=" + endDate;
+            if (url && url.length > 0) {
+                $(item).load(url); 
+            }
+        });
+    });
+
+    function loadPartial(event, id, name, url) {
+        event.preventDefault();
+        $(id).html('<header><h2><a href="#">' + name + '</a></h2></header><img src="/images/clockLoader.svg" class="loader" alt="loading"/>');
+        url = url + "?startDate=" + document.getElementById('startDate').value + "&endDate=" + document.getElementById('endDate').value;
+        if (url && url.length > 0) {
+            $(id).load(url);
+        }
+    }
+
+    function insertTimeIntoHollard(id, name, url, timesheetEntry, categoryName, hours, comment) {
+        $(id).html('<header><h2><a href="#">' + name + '</a></h2></header><img src="/images/clockLoader.svg" class="loader" alt="loading"/>');
+        url = url + "?startDate=" + document.getElementById('startDate').value + "&endDate=" + document.getElementById('endDate').value;
+        url = url + "&timesheetEntry=" + timesheetEntry + "&categoryName=" + categoryName + "&hours=" + hours + "&comment=" + comment;
+        url = encodeURI(url);
+        if (url && url.length > 0) {
+            $(id).load(url);
+        }
+    }
+</script>
+
+<!-- Main -->
+<div id="main">
+    
+    <section class="posts">
+        <article id="entelect" class="partialContents no-padding" data-url="/Home/Entelect">
+            <header>
+                <h2>
+                    <a href="#">
+                        Entelect
+                    </a>
+                </h2>
+            </header>
+            <img src="~/images/clockLoader.svg" class="loader" alt="loading" />
+        </article>
+        <article id="hollard" class="partialContents no-padding" data-url="/Home/Hollard">
+            <header>
+                <h2>
+                    <a href="#">
+                        Hollard
+                    </a>
+                </h2>
+            </header>
+            <img src="~/images/clockLoader.svg" class="loader" alt="loading" />
+        </article>
+    </section>
+
+</div>

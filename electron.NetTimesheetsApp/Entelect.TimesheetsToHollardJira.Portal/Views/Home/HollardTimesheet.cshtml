@@ -1,0 +1,38 @@
+﻿@model HomeViewModel
+
+<header>
+    <h2>
+        <a href="#">
+            Hollard
+        </a>
+    </h2>
+</header>
+<div class="table-wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 15%">Date</th>
+            <th>Description</th>
+            <th style="width: 10%">Hours</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for (int day = 0; day < Model.Hollard.Count(); ++day)
+        {
+            <tr>
+                <td>
+                    @Model.Hollard[day].DateStarted.ToString("yyyy") <br />
+                    @Model.Hollard[day].DateStarted.ToString("MM-dd")
+                </td>
+                <td>@Model.Hollard[day].Comment</td>
+                <td>@Model.Hollard[day].TimeSpentHours.ToString("#.##") h</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<ul class="actions special">
+    <li><a href="#" class="button" onclick="loadPartial(event, '#hollard', 'Hollard', '/Home/Hollard')">Refresh</a></li>
+</ul>
+

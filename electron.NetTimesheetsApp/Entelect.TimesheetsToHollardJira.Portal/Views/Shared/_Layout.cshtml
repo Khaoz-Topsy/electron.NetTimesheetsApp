@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Entelect Timesheets To Hollard Jira</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/assets/css/main.css" />
+        <link rel="stylesheet" href="~/assets/css/custom.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/assets/css/main.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/assets/css/custom.css" asp-append-version="true" />
+    </environment>
+
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" asp-append-version="true" />
+
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    <script src="~/assets/js/jquery.min.js" asp-append-version="true"></script>
+    <script>if (window.module) module = window.module;</script>
+    
+</head>
+<body>
+    <div id="wrapper" class="fade-in">
+
+        <header id="header">
+            <a href="/" class="logo">Timesheets</a>
+        </header>
+
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="#">Compare</a></li>
+                <li style="margin-left: 10px;"><input type="date" name="startDate" id="startDate"></li>
+                <li>&nbsp;-&nbsp;<input type="date" name="startDate" id="endDate"></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <partial name="_CookieConsentPartial" />
+
+        @RenderBody()
+        <footer id="footer">
+        </footer>
+
+        <div id="copyright">
+            <ul><li>&copy; Speedy Timesheets ⚡</li><li>💩 Kurt made dis 💩</li><li>💖 For the CQT Team</li></ul>
+        </div>
+        <div class="bg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+        <a href="#navPanel" id="navPanelToggle">Menu</a>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
